@@ -18,11 +18,4 @@ COPY decktape.js ./
 
 RUN curl -f \
     -L https://github.com/astefanutti/decktape/releases/download/v1.0.0/phantomjs-linux-x86-64 \
-    -o phantomjs
-
-RUN chmod +x phantomjs
-
-WORKDIR /slides
-
-ENTRYPOINT ["/decktape/phantomjs", "/decktape/decktape.js"]
-CMD ["-h"]
+    -o phantomjs && chmod +x phantomjs
